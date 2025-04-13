@@ -1,36 +1,93 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Sorting Algorithm Visualizer
+
+An interactive web application to visualize how sorting algorithms work, built with Next.js and TypeScript.
+
+## Features
+
+- Visualize multiple sorting algorithms in real-time
+- Configure the number of elements and their initial distribution
+- Track metrics like comparison count and elapsed time
+- Audio feedback for comparisons and swaps
+- Responsive design with Tailwind CSS
+
+## Supported Sorting Algorithms
+
+- Bubble Sort
+- Selection Sort
+- Insertion Sort
+- Merge Sort
+- Quick Sort
+- Heap Sort
+- Counting Sort
+- And many more!
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
+- Node.js 18.x or later
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/sorting-algorithm-visualizer.git
+cd sorting-algorithm-visualizer
+```
+
+2. Install dependencies:
+```bash
+npm install
+# or
+yarn install
+```
+
+3. Run the development server:
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Usage
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Select a sorting algorithm from the dropdown menu
+2. Set the number of elements (10-200)
+3. Choose the initial distribution of elements
+4. Click "Start" to begin the visualization
+5. Use "Pause" and "Reset" buttons to control the animation
+6. Toggle audio feedback on/off as desired
 
-## Learn More
+## Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+sorting-battle/
+├── app/
+│   ├── components/
+│   │   ├── ControlPanel.tsx
+│   │   └── VisualizationArea.tsx
+│   ├── hooks/
+│   │   └── useAudio.ts
+│   ├── utils/
+│   │   └── sortingAlgorithms.ts
+│   ├── layout.tsx
+│   └── page.tsx
+├── public/
+├── .gitignore
+├── next.config.js
+├── package.json
+├── README.md
+└── tsconfig.json
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## License
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-## Deploy on Vercel
+## Acknowledgments
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Inspired by various sorting algorithm visualizers
+- Built with Next.js and Tailwind CSS
