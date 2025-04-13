@@ -12,7 +12,6 @@ interface VisualizationAreaProps {
   comparisonIndices: number[];
   comparisons: number;
   timeElapsed: number;
-  isSorting: boolean;
   isComplete: boolean;
 }
 
@@ -23,7 +22,6 @@ const VisualizationArea: React.FC<VisualizationAreaProps> = ({
   comparisonIndices,
   comparisons,
   timeElapsed,
-  isSorting,
   isComplete
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -48,13 +46,15 @@ const VisualizationArea: React.FC<VisualizationAreaProps> = ({
     
     // Create a ResizeObserver to watch for container size changes
     const resizeObserver = new ResizeObserver(updateBarWidth);
-    if (containerRef.current) {
-      resizeObserver.observe(containerRef.current);
+    const currentRef = containerRef.current; // Store ref value in a variable
+    
+    if (currentRef) {
+      resizeObserver.observe(currentRef);
     }
     
     return () => {
-      if (containerRef.current) {
-        resizeObserver.unobserve(containerRef.current);
+      if (currentRef) {
+        resizeObserver.unobserve(currentRef);
       }
       resizeObserver.disconnect();
     };

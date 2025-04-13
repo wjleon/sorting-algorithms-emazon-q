@@ -227,7 +227,6 @@ export default function Home() {
             comparisonIndices={comparisonIndices}
             comparisons={comparisons}
             timeElapsed={timeElapsed}
-            isSorting={isSorting}
             isComplete={isComplete}
           />
         </div>

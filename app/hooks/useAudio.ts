@@ -1,5 +1,9 @@
 import { useRef, useEffect, useState } from 'react';
 
+interface WebAudioAPI extends Window {
+  webkitAudioContext: typeof AudioContext;
+}
+
 export function useAudio() {
   const audioContextRef = useRef<AudioContext | null>(null);
   const [isEnabled, setIsEnabled] = useState<boolean>(true);
@@ -7,7 +11,8 @@ export function useAudio() {
   useEffect(() => {
     // Initialize AudioContext on client side only
     if (typeof window !== 'undefined' && !audioContextRef.current) {
-      audioContextRef.current = new (window.AudioContext || (window as any).webkitAudioContext)();
+      audioContextRef.current = new (window.AudioContext || 
+        ((window as unknown as WebAudioAPI).webkitAudioContext))();
     }
 
     return () => {
