@@ -1,3 +1,7 @@
+# Blog Post
+This repo is part of a blog post that can be found [here:](https://medium.com/@wjleon/the-new-google-firebase-studio-gave-me-vibes-of-2010-the-vibe-coding-battle-b568d51d4ed1)
+
+
 # Sorting Algorithm Visualizer
 
 An interactive web application to visualize how sorting algorithms work, built with Next.js and TypeScript.
